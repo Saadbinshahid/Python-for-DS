@@ -1,0 +1,977 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "4a15ddb2-0cfd-45be-bf8f-aef1ed31352e",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#Sets\n",
+    "    "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "316d4a00-96fa-4cd4-ba9a-f768349cbea9",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "dict"
+      ]
+     },
+     "execution_count": 2,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "a = {} #python - sets and dictionary is represented by {}\n",
+    "type(a) # emty {} is defined as dictionary"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "ae86089d-a16e-4513-9372-97345c674068",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "set"
+      ]
+     },
+     "execution_count": 3,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "a = {1,2} #while {} having elements in it, is decleared as sets by default by python.\n",
+    "type(a)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "id": "21880106-d8e3-4a9d-827f-287e06edfae1",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "{1, 3, 4, 5}\n"
+     ]
+    }
+   ],
+   "source": [
+    "s = {3,4,5,1}\n",
+    "print (s) #unorder condition in sets in python"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "id": "0d2ad08a-db12-42e6-8faa-22770018ace4",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# all data type which are mutable, they cannot be part of 'sets'"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "id": "35766ae3-fb3b-4750-bb49-00ca12aeb306",
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "TypeError",
+     "evalue": "unhashable type: 'list'",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[1;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[1;31mTypeError\u001b[0m                                 Traceback (most recent call last)",
+      "Cell \u001b[1;32mIn[11], line 1\u001b[0m\n\u001b[1;32m----> 1\u001b[0m s \u001b[38;5;241m=\u001b[39m {\u001b[38;5;241m1\u001b[39m,\u001b[38;5;241m2\u001b[39m,\u001b[38;5;241m3\u001b[39m,\u001b[38;5;241m4\u001b[39m,[\u001b[38;5;241m3\u001b[39m,\u001b[38;5;241m4\u001b[39m]}\n\u001b[0;32m      2\u001b[0m s\n",
+      "\u001b[1;31mTypeError\u001b[0m: unhashable type: 'list'"
+     ]
+    }
+   ],
+   "source": [
+    "s = {1,2,3,4,[3,4]} # list is mutable data type hence hashable data type.\n",
+    "s"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "id": "8067bbd5-23fd-4a39-8a61-eda018c611f2",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "{1, 2, 3, 4, (55, 66)}\n"
+     ]
+    }
+   ],
+   "source": [
+    "s = {1,2,3,4,(55,66)} #tuple is immutable data type hence it is accepted by sets.\n",
+    "print(s)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 29,
+   "id": "1b07e84e-cbfb-4364-937e-ebf0b0470f44",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "{1, 'saad', 1.5}\n"
+     ]
+    }
+   ],
+   "source": [
+    "s = {1,1.5,'saad',True} # four data types have been inserted (int,float,str,boolean)\n",
+    "print(s)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 14,
+   "id": "cf78994f-8a3b-4667-b103-3ec473880eeb",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#type conversion "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 25,
+   "id": "973cc85a-b01b-433a-bfa9-90236388002c",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "{'apple', 'banana', 'cherry'}\n",
+      "<class 'set'>\n"
+     ]
+    }
+   ],
+   "source": [
+    "fruits = set(['apple','banana','cherry'])\n",
+    "print(fruits)\n",
+    "print(type(fruits))\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 27,
+   "id": "e8d0e8f7-260c-4940-a098-f94cd0d7bf85",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "True"
+      ]
+     },
+     "execution_count": 27,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "s1={1,2,2,3,4}\n",
+    "s2={4,3,2,1} # repeatable elements is considered as one and sequence does'nt matter in sets. \n",
+    "s1==s2"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 30,
+   "id": "b7f4f212-b9da-4ad7-a212-4e64d37593b9",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "{1, 1.5, 'saad'}"
+      ]
+     },
+     "execution_count": 30,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "s"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 34,
+   "id": "be381475-0f60-45e2-a2be-f11549e34f08",
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "TypeError",
+     "evalue": "'set' object is not subscriptable",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[1;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[1;31mTypeError\u001b[0m                                 Traceback (most recent call last)",
+      "Cell \u001b[1;32mIn[34], line 1\u001b[0m\n\u001b[1;32m----> 1\u001b[0m \u001b[38;5;28mprint\u001b[39m (s[\u001b[38;5;241m0\u001b[39m])\n",
+      "\u001b[1;31mTypeError\u001b[0m: 'set' object is not subscriptable"
+     ]
+    }
+   ],
+   "source": [
+    "print (s[0])\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 39,
+   "id": "691f8c4c-db6e-4229-9bab-600462c32f97",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[111, 4, 5]\n"
+     ]
+    }
+   ],
+   "source": [
+    "st = [3,4,5]\n",
+    "st[0] = 111\n",
+    "print (st)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 40,
+   "id": "f745c0e5-be12-4ce7-ac52-95cb4e152051",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "{1, 1.5, 'saad'}"
+      ]
+     },
+     "execution_count": 40,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "s"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 42,
+   "id": "1b9b4f93-1ba6-459d-96b4-2b24217c19ac",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "{1, 2, 3, 4}\n"
+     ]
+    }
+   ],
+   "source": [
+    "S = {1,2,3,4}\n",
+    "print(S)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 44,
+   "id": "da56b32f-c095-4694-969a-74918723ca49",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "{1, 2, 3, 4, 5}\n"
+     ]
+    }
+   ],
+   "source": [
+    "S.add(5) 3 #adding element in the sets as set can only add one item at once\n",
+    "print(S)\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 46,
+   "id": "f79fe6c8-108d-488e-8ada-24933693529d",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "{1, 2, 3, 4, 5, 6, 7, 8}\n"
+     ]
+    }
+   ],
+   "source": [
+    "S.update([6,7,8]) # updates multiple items in the set.\n",
+    "print(S)\n",
+    "# does not add'list []' as set does not incorporate mutable items however it converts list in to immutable form to sets.  "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 47,
+   "id": "cf8fb821-e847-431a-bea9-5b6de49c3127",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "{1, 2, 3, 4, 5, 6, 7, 8, 'saad'}\n"
+     ]
+    }
+   ],
+   "source": [
+    "S.update(['saad'])\n",
+    "print(S)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 48,
+   "id": "42843a8d-bba7-47a0-b67c-b327e4dafc8d",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "{1, 2, 3, 4, 5, 6, 7, 8, 'i', 'm', 'a', 'n', 'r', 'saad'}\n"
+     ]
+    }
+   ],
+   "source": [
+    "S.update(('imran')) # str is immutable \n",
+    "print(S)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 54,
+   "id": "9beeb5ab-1822-4f44-b39b-c2e1c4ca4411",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "{'imran'}\n"
+     ]
+    }
+   ],
+   "source": [
+    "S11 = {'imran'}\n",
+    "print(S11)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 55,
+   "id": "9f519adb-4c74-4fcc-a163-3aed7054d397",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "{'h', 'n', 'a', 'k', 'imran'}\n"
+     ]
+    }
+   ],
+   "source": [
+    "S11.update('khan') # passed str. \n",
+    "print(S11)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 56,
+   "id": "53e1f59c-e3e6-4009-8fe5-f9ca104817da",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "{'h', 'n', 'a', 'khan', 'k', 'imran'}\n"
+     ]
+    }
+   ],
+   "source": [
+    "S11.update(['khan'])\n",
+    "print(S11)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 59,
+   "id": "ae936c34-bbd8-40b4-ac63-d24788a5ccd0",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "{1, 2, 3, 'm', 'h', 'n', 'a', 'i', 's', 'khan', 'k', 'q', 'imran'}\n",
+      "{1, 2, 3, 'm', 'h', 'n', 'a', 'i', 's', 'khan', 'k', 'q', 'imran'}\n"
+     ]
+    }
+   ],
+   "source": [
+    "S11.update((1,2,3))\n",
+    "print(S11)\n",
+    "S11.update(('qasim'))\n",
+    "print(S11)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 60,
+   "id": "c0de4398-8060-467c-95f7-555ea199f100",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "{1, 2, 3, 4, 5, 6, 7, 8, 'i', 'm', 'a', 'n', 'r', 'saad'}\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(S)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 61,
+   "id": "7ca0deca-82a2-4eca-903b-d921c1e9e8e9",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "{2, 3, 4, 5, 6, 7, 8, 'i', 'm', 'a', 'n', 'r', 'saad'}\n"
+     ]
+    }
+   ],
+   "source": [
+    "S.pop()\n",
+    "print(S)\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 62,
+   "id": "1f5273a3-5061-420e-831a-a2e6687a3959",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "{2, 3, 4, 5, 6, 7, 8, 'a', 'i', 'm', 'n', 'r'}"
+      ]
+     },
+     "execution_count": 62,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "S.remove('saad') # remove elements also displaces elements outside the set if it's not present in the sets.\n",
+    "S"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 66,
+   "id": "c7c9cecc-8fda-4fe3-a601-40ace6b1dfde",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "{2, 3, 4, 5, 6, 7, 8, 'm', 'a', 'n', 'r'}\n"
+     ]
+    }
+   ],
+   "source": [
+    "S.discard('i') #remove and discard function is same but discard only removes the elements from the set which exist in the set.\n",
+    "print(S)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 67,
+   "id": "f9e870fc-1546-4425-bb39-a9ebbcd1e345",
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "TypeError",
+     "evalue": "'set' object doesn't support item deletion",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[1;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[1;31mTypeError\u001b[0m                                 Traceback (most recent call last)",
+      "Cell \u001b[1;32mIn[67], line 1\u001b[0m\n\u001b[1;32m----> 1\u001b[0m \u001b[38;5;28;01mdel\u001b[39;00m S[\u001b[38;5;241m1\u001b[39m]\n\u001b[0;32m      2\u001b[0m \u001b[38;5;28mprint\u001b[39m(S)\n",
+      "\u001b[1;31mTypeError\u001b[0m: 'set' object doesn't support item deletion"
+     ]
+    }
+   ],
+   "source": [
+    "del S[1]\n",
+    "print(S)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 68,
+   "id": "3e65c67e-4da3-40ad-8427-2d129d022ce2",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "set()\n"
+     ]
+    }
+   ],
+   "source": [
+    "S.clear()\n",
+    "print(S)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 69,
+   "id": "36f93f93-d742-4bd9-a565-e22ffc6e40fb",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#operations in set"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 70,
+   "id": "8b57018c-2c70-436f-8b78-7f83b4d3307f",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "{2, 3, 4, 5, 6, 10, 12, 13}\n"
+     ]
+    }
+   ],
+   "source": [
+    "s3= {2,3,4,5,6}\n",
+    "s4 = {3,4,5,10,12,13}\n",
+    "#union opertion (|)\n",
+    "S =s3|s4\n",
+    "print(S)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 71,
+   "id": "6473e108-15af-490f-bde7-d3870e6aa23e",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "{3, 4, 5}\n"
+     ]
+    }
+   ],
+   "source": [
+    "s3= {2,3,4,5,6}\n",
+    "s4 = {3,4,5,10,12,13}\n",
+    "#intersection opertion (&)\n",
+    "S =s3&s4\n",
+    "print(S)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 73,
+   "id": "204e4f2e-2c8a-4744-9c9f-34b63c576671",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "{10, 12, 13}\n"
+     ]
+    }
+   ],
+   "source": [
+    "#difference operation \n",
+    "s3= {2,3,4,5,6}\n",
+    "s4 = {3,4,5,10,12,13}\n",
+    "#difference opertion (&)\n",
+    "S =s4-s3\n",
+    "print(S)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 74,
+   "id": "f48c6b1f-7b3d-4f8b-b03e-01a106674418",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "{2, 6, 10, 12, 13}\n"
+     ]
+    }
+   ],
+   "source": [
+    "#symmetric difference \n",
+    "s3= {2,3,4,5,6}\n",
+    "s4 = {3,4,5,10,12,13}\n",
+    "#symmetric difference opertion (&)\n",
+    "S =s4^s3\n",
+    "print(S)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 77,
+   "id": "416e8c9f-9b08-46e0-a6ec-dcbbed2c3ed0",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "True"
+      ]
+     },
+     "execution_count": 77,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "#membership operators\n",
+    "3 in s3"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 79,
+   "id": "f1e4bedf-57a4-4a3d-8d14-c87eacadbec8",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "6\n",
+      "3\n",
+      "13\n",
+      "47\n",
+      "[13, 12, 10, 5, 4, 3]\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(len(s4))\n",
+    "print(min(s4))\n",
+    "print(max(s4))\n",
+    "print(sum(s4))\n",
+    "print(sorted(s4, reverse= True))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 80,
+   "id": "ff6ee532-7402-484b-b4ab-e949250e11a8",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "{2, 3, 4, 5, 6}"
+      ]
+     },
+     "execution_count": 80,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "#union and update\n",
+    "s3"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 81,
+   "id": "be78be27-575b-45d8-9364-c4a10371665a",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "{3, 4, 5, 10, 12, 13}"
+      ]
+     },
+     "execution_count": 81,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "s4"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 88,
+   "id": "86f7b74a-dc1e-4613-91b3-6335383c3195",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "{1, 2, 3, 4, 5, 6, 7}\n",
+      "{3, 4, 5, 6}\n",
+      "{1, 2, 3, 4, 5, 6, 7}\n"
+     ]
+    }
+   ],
+   "source": [
+    "s1 = {1,2,3,4,5,6,7}\n",
+    "s2 = {3,4,5,6}\n",
+    "s3 = s1.union(s2)\n",
+    "s1.update(s2)\n",
+    "print(s1)\n",
+    "print(s2)\n",
+    "print(s3)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 90,
+   "id": "4d5f0ad1-7825-4121-bdc0-8311d0b5a74f",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "True"
+      ]
+     },
+     "execution_count": 90,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "s1.issuperset(s2)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 91,
+   "id": "01605f1d-7ace-4bf9-9fed-da0228eb81e4",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "False"
+      ]
+     },
+     "execution_count": 91,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "s1.isdisjoint(s2)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 93,
+   "id": "190a2644-864f-4fc7-832f-50b9f1568b6e",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "True"
+      ]
+     },
+     "execution_count": 93,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "s2.issubset(s1)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 94,
+   "id": "d2010d4f-8e0d-4cdb-a89a-417e8f73eec7",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "s1.symmetric_difference_update(s2)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 95,
+   "id": "79d15de6-1260-4ace-ae04-79a5e1a9c8a6",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#frozen set - It creats a set as a immutable. (act as tupe)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 100,
+   "id": "cc52a586-4f69-49f6-9024-61e431a269a7",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "frozenset({1, 2, 3, 4, 5})\n"
+     ]
+    }
+   ],
+   "source": [
+    "fs1 = frozenset([1,2,3])\n",
+    "fs2 = frozenset([3,4,5])\n",
+    "fs3 = fs1 | (fs2)\n",
+    "print(fs3)\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 103,
+   "id": "340b2658-2a37-4223-a50f-183d74357f34",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "frozenset({1, 2, 3, 4, 5})\n"
+     ]
+    }
+   ],
+   "source": [
+    "fs1 = frozenset([1,2,3])\n",
+    "fs2 = {3,4,5}\n",
+    "fs3 = fs1 | fs2\n",
+    "fs4 = fs1 & fs3\n",
+    "print(fs3)\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 110,
+   "id": "f46a072b-931c-49a2-aa0e-fbd91c7493b5",
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "NameError",
+     "evalue": "name 'saad' is not defined",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[1;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[1;31mNameError\u001b[0m                                 Traceback (most recent call last)",
+      "Cell \u001b[1;32mIn[110], line 1\u001b[0m\n\u001b[1;32m----> 1\u001b[0m s5 \u001b[38;5;241m=\u001b[39m \u001b[38;5;28mfrozenset\u001b[39m([\u001b[38;5;241m1\u001b[39m,\u001b[38;5;241m2\u001b[39m,\u001b[38;5;241m3\u001b[39m,\u001b[38;5;28mfrozenset\u001b[39m([saad])])\n\u001b[0;32m      2\u001b[0m \u001b[38;5;28mprint\u001b[39m(s5)\n",
+      "\u001b[1;31mNameError\u001b[0m: name 'saad' is not defined"
+     ]
+    }
+   ],
+   "source": [
+    "s5 = frozenset([1,2,3,frozenset([saad])])\n",
+    "print(s5)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "f821ecf2-172d-4323-908d-43eb28b96ba1",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.12.4"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
